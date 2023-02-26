@@ -1,10 +1,15 @@
+const VND = new Intl.NumberFormat("vi-VN", {
+  style: "currency",
+  currency: "VND",
+});
+
 // Bài 1
 
 function bai1() {
   var soNgayLam = document.getElementById("songaylam-bai1").value;
   var luong = soNgayLam * 100000;
   document.getElementById("result-bai1").innerHTML = `
-  <h4>Lương nhận được là: ${luong}VND</h4>
+  <h4>Lương nhận được là: ${VND.format(luong)}</h4>
   `;
 }
 // Bài 2
@@ -29,10 +34,6 @@ function bai2() {
 }
 // Bài 3
 function bai3() {
-  const VND = new Intl.NumberFormat("vi-VN", {
-    style: "currency",
-    currency: "VND",
-  });
   var soTien = document.getElementById("sotien-bai3").value;
   var tienDoiDuoc = soTien * 23500;
   document.getElementById("result-bai3").innerHTML = `
